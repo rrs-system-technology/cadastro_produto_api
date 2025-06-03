@@ -2,6 +2,8 @@
 
 Esse é um projeto do curso de extensão da UNICESUMAR.
 
+Nesso projeto estamos usando a FAKESTOREAPI : https://fakestoreapi.com/products
+
 ## Getting Started
 
 ## LISTA DE PRODUTOS
