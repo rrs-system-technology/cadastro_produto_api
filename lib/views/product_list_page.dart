@@ -11,24 +11,45 @@ class ProductListPage extends StatelessWidget {
 
   final controller = Get.find<ProductController>();
   final _searchController = TextEditingController();
+  final themeMode = Get.find<ThemeController>().themeMode;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Produtos'),
+        elevation: 3,
+        title: const Text(
+          'Produtos',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            letterSpacing: 1,
+          ),
+        ),
         centerTitle: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            bottom: Radius.circular(16),
+          ),
+        ),
         actions: [
-          GetX<ThemeController>(
-            builder: (themeController) {
-              final isDark = themeController.themeMode.value == ThemeMode.dark;
-
-              return IconButton(
-                icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
-                tooltip: isDark ? 'Modo claro' : 'Modo escuro',
-                onPressed: themeController.toggleTheme,
-              );
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 12),
+            child: GetX<ThemeController>(
+              builder: (themeController) {
+                final isDark = themeController.themeMode.value == ThemeMode.dark;
+                return Tooltip(
+                  message: isDark ? 'Modo Claro' : 'Modo Escuro',
+                  child: IconButton(
+                    icon: Icon(
+                      isDark ? Icons.light_mode_outlined : Icons.dark_mode_outlined,
+                      color: Colors.white,
+                    ),
+                    onPressed: themeController.toggleTheme,
+                  ),
+                );
+              },
+            ),
           ),
         ],
       ),
@@ -44,6 +65,7 @@ class ProductListPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
               // 🔍 Filtro e busca (Fixo)
               CustomDropdown(
                 label: 'Pesquisa por categoria',
@@ -196,10 +218,14 @@ class ProductListPage extends StatelessWidget {
         );
       }),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: themeMode.value == ThemeMode.dark ? Colors.white : Colors.black,
         onPressed: () {
           Get.to(() => ProductFormPage());
         },
-        child: const Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: themeMode.value == ThemeMode.dark ? Colors.black : Colors.white,
+        ),
       ),
     );
   }

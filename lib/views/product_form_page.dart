@@ -3,12 +3,15 @@ import 'package:crud_flutter_api/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../common/theme_controller.dart';
+
 class ProductFormPage extends StatelessWidget {
   final Product? product;
   ProductFormPage({super.key, this.product});
 
   final _formKey = GlobalKey<FormState>();
   final ProductController controller = Get.find();
+  final themeMode = Get.find<ThemeController>().themeMode;
 
   final RxString title = ''.obs;
   final RxString price = ''.obs;
@@ -50,11 +53,21 @@ class ProductFormPage extends StatelessWidget {
       selectedCategory.value = product!.category;
       imageUrl.value = product!.image;
     }
-
+    //
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cadastro de Produto'),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          tooltip: 'Voltar',
+          onPressed: () {
+            Get.back(); // 🔙 Volta para a tela anterior usando GetX
+          },
+        ),
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -175,13 +188,31 @@ class ProductFormPage extends StatelessWidget {
                         SizedBox(
                           height: 48,
                           child: ElevatedButton.icon(
-                            icon: Icon(product == null ? Icons.save : Icons.save_as),
-                            label: Text(product == null ? 'Salvar Produto' : 'Atualizar Produto'),
+                            icon: Icon(
+                              product == null ? Icons.save : Icons.save_as,
+                              color: themeMode.value == ThemeMode.dark
+                                  ? Colors.white
+                                  : const Color(0xFF512DA8),
+                            ),
+                            label: Text(
+                              product == null ? 'Salvar Produto' : 'Atualizar Produto',
+                              style: TextStyle(
+                                color: themeMode.value == ThemeMode.dark
+                                    ? Colors.white
+                                    : const Color(0xFF512DA8),
+                              ),
+                            ),
                             onPressed: _save,
                             style: ElevatedButton.styleFrom(
+                              backgroundColor:
+                                  themeMode.value == ThemeMode.dark ? Colors.black : Colors.white,
                               shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
+                                  borderRadius: BorderRadius.circular(12),
+                                  side: BorderSide(
+                                    color: themeMode.value == ThemeMode.dark
+                                        ? Colors.white
+                                        : const Color(0xFF512DA8),
+                                  )),
                             ),
                           ),
                         ),

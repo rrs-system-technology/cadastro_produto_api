@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../../common/theme_controller.dart';
 
 class CustomDropdown extends StatelessWidget {
   final String label;
@@ -20,6 +23,7 @@ class CustomDropdown extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
+    final themeMode = Get.find<ThemeController>().themeMode;
 
     return DropdownButtonFormField<String>(
       value: value != '' ? value : null,
@@ -42,7 +46,7 @@ class CustomDropdown extends StatelessWidget {
       isExpanded: true,
       icon: Icon(
         Icons.arrow_drop_down,
-        color: colorScheme.primary,
+        color: themeMode.value == ThemeMode.dark ? Colors.white : Colors.black,
       ),
       dropdownColor: colorScheme.surface,
       style: textTheme.bodyMedium?.copyWith(
