@@ -218,7 +218,7 @@ class ProductListPage extends StatelessWidget {
         );
       }),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: themeMode.value == ThemeMode.dark ? Colors.white : Colors.black,
+        backgroundColor: themeMode.value == ThemeMode.dark ? Colors.white : const Color(0xFF512DA8),
         onPressed: () {
           Get.to(() => ProductFormPage());
         },
