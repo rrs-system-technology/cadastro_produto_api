@@ -20,7 +20,7 @@ Nesso projeto estamos usando a FAKESTOREAPI : https://fakestoreapi.com/products
 </div>
 
 
-
+<hr/>
 
 
 🛍️ Cadastro e Listagem de Produtos
