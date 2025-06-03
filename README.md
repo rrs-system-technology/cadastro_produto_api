@@ -20,6 +20,9 @@ Nesso projeto estamos usando a FAKESTOREAPI : https://fakestoreapi.com/products
 </div>
 
 
+
+
+
 🛍️ Cadastro e Listagem de Produtos
 Este é um aplicativo Flutter para listagem, visualização e cadastro de produtos, utilizando a Fake Store API como fonte de dados. O app foi desenvolvido com uma interface moderna em tema escuro, com foco em praticidade e usabilidade.
 
