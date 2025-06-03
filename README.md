@@ -5,8 +5,11 @@ Esse é um projeto do curso de extensão da UNICESUMAR.
 ## Getting Started
 
 ## LISTA DE PRODUTOS
-<img src="/assets/lista-produtos.jpg" width="110px" height="210px">
-<img src="/assets/lista-produtos-black.jpg" width="110px" height="210px">
+<div style="display: flex; gap: 10px;">
+  <img src="/assets/lista-produtos.jpg" width="110px" height="210px">
+  <img src="/assets/lista-produtos-black.jpg" width="110px" height="210px">
+</div>
+
 
 ## CADASTRO DE PRODUTO
 <img src="/assets/cadastro-produtos.jpg" width="110px" height="210px">
