@@ -12,5 +12,7 @@ Esse é um projeto do curso de extensão da UNICESUMAR.
 
 
 ## CADASTRO DE PRODUTO
-<img src="/assets/cadastro-produtos.jpg" width="110px" height="210px">
-<img src="/assets/cadastro-produtos-back.jpg" width="110px" height="210px">
+<div style="display: flex; gap: 10px;">
+  <img src="/assets/cadastro-produtos.jpg" width="110px" height="210px">
+  <img src="/assets/cadastro-produtos-back.jpg" width="110px" height="210px">
+</div>
