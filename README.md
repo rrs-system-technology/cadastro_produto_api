@@ -6,8 +6,8 @@ Esse é um projeto do curso de extensão da UNICESUMAR.
 
 ## LISTA DE PRODUTOS
 <div style="display: flex; gap: 10px;">
-  <img src="/assets/cadastro-produtos-white.jpg" width="110px" height="210px">
-  <img src="/assets/cadastro-produtos-back.jpg" width="110px" height="210px">
+  <img src="/assets/lista-produtos-white.jpg" width="110px" height="210px">
+  <img src="/assets/lista-produtos-black.jpg" width="110px" height="210px">
 </div>
 
 
