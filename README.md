@@ -35,7 +35,7 @@ Este é um aplicativo Flutter para listagem, visualização e cadastro de produt
 
 🖼️ Exibição de imagens dos produtos diretamente da URL da API.
 
-💡 Interface intuitiva com tema escuro e ícones funcionais.
+💡 Interface intuitiva com tema escuro e claro e ícones funcionais.
 
 🧰 Tecnologias utilizadas
 Flutter (Dart)
